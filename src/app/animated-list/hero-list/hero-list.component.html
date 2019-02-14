@@ -1,7 +1,12 @@
-<ul style="margin-top: 5rem">
-  <li *ngFor="let hero of heroes">
-    <app-hero-list-enter-leave [heroName]="hero"></app-hero-list-enter-leave>
-  </li>
-  <input type="text">
-  <button (click)="addHero()">Add Hero</button>
+<ul @list style="margin-top: 5rem">
+  <div @flyInOut
+       *ngFor="let hero of heroes"
+  >
+    <app-hero-list-enter-leave
+       (onRemove)="removeHero($event)"
+      [heroName]="hero"
+    ></app-hero-list-enter-leave>
+  </div>
 </ul>
+<input type="text" (keyup)="onKey($event)">
+<button (click)="addHero()">Add Hero</button>
