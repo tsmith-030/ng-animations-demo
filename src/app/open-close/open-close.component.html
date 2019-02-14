@@ -1,0 +1,4 @@
+<div [@openClose]="buttonProgress" class="open-close-container">
+  <p>The box is now {{buttonProgress}}!</p>
+</div>
+<button (click)="toggle()">{{isOpen ? 'Close' : 'Open'}} the box</button>
