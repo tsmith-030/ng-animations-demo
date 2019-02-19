@@ -9,5 +9,11 @@
 <div id="demo-container">
   <app-open-close></app-open-close>
   <app-hero-list></app-hero-list>
-  <app-loading-button></app-loading-button>
+  <p style="margin-bottom: -2rem">{{pokemon}}</p>
+  <app-loading-button
+    label="Fetch Data"
+    [asyncFunction$]="getRandomPokemon()"
+    (onSuccess)="onGetPokemonSuccess($event)"
+    (onFailure)="onGetPokemonFail($event)"
+  ></app-loading-button>
 </div>
