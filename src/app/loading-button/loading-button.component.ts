@@ -12,6 +12,8 @@ export class LoadingButtonComponent implements AfterViewInit {
   private loading = false;
   @Input() asyncFunction$: Observable<any>;
 
+  @Output() onClick: EventEmitter<any> = new EventEmitter(false);
+
   @Output() onSuccess: EventEmitter<any> = new EventEmitter();
   @Output() onFailure: EventEmitter<any> = new EventEmitter();
 
@@ -28,7 +30,7 @@ export class LoadingButtonComponent implements AfterViewInit {
     });
   }
 
-  getData() {
+  getData(): void {
     this.loading = true;
 
     this.asyncFunction$
@@ -39,7 +41,7 @@ export class LoadingButtonComponent implements AfterViewInit {
       .catch((err) => {
         this.onFailure.emit(err);
       }).finally(() => {
-      this.loading = false;
+          this.loading = false;
     });
 
     // this.cvsHttpClient.get(`https://pokeapi.co/api/v2/pokemon/${random}`)

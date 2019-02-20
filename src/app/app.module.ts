@@ -10,6 +10,7 @@ import { SpinnerComponent } from './loading-button/spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {HttpClientModule} from '@angular/common/http';
 import {CVSHttpClient} from './cvs-http-client.service';
+import { LoaderOverlayComponent } from './loader-overlay/loader-overlay.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CVSHttpClient} from './cvs-http-client.service';
     HeroListEnterLeaveComponent,
     HeroListComponent,
     LoadingButtonComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    LoaderOverlayComponent
   ],
   imports: [
     BrowserModule,
