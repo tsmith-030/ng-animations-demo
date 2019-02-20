@@ -11,8 +11,9 @@ export class LoadingButtonComponent implements AfterViewInit {
   @Input() label;
   private loading = false;
   @Input() asyncFunction$: Observable<any>;
-
-  @Output() onClick: EventEmitter<any> = new EventEmitter(false);
+  @Input() overlayLoader: boolean;
+  loadingHeader = "Loading Content"
+  loadingMessage = "Please wait a moment"
 
   @Output() onSuccess: EventEmitter<any> = new EventEmitter();
   @Output() onFailure: EventEmitter<any> = new EventEmitter();
@@ -24,13 +25,21 @@ export class LoadingButtonComponent implements AfterViewInit {
   private buttonWidth;
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
+    setTimeout(() => { //timeout is needed here to wait one tick until the view is ready
         this.buttonHeight = this.buttonElement.nativeElement.offsetHeight;
         this.buttonWidth = this.buttonElement.nativeElement.offsetWidth;
     });
   }
 
-  getData(): void {
+  get showButtonLoader(): boolean {
+    return this.loading && !this.overlayLoader;
+  }
+
+  get showOverlayLoader(): boolean {
+    return this.loading && this.overlayLoader;
+  }
+
+  performAsyncAction(): void {
     this.loading = true;
 
     this.asyncFunction$
@@ -43,11 +52,5 @@ export class LoadingButtonComponent implements AfterViewInit {
       }).finally(() => {
           this.loading = false;
     });
-
-    // this.cvsHttpClient.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
-    //   .pipe(
-    //     startWith(null),
-    //     tap((res) => {this.pokemon = res.name}, () => {this.pokemon = 'ERR: Could not retrieve a Pokemon'}, () => {this.loading = false})
-    //   );
   }
 }

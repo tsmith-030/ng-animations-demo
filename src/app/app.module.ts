@@ -6,7 +6,6 @@ import { OpenCloseComponent } from './open-close/open-close.component';
 import { HeroListEnterLeaveComponent } from './animated-list/hero-list-enter-leave/hero-list-enter-leave.component';
 import { HeroListComponent } from './animated-list/hero-list/hero-list.component';
 import { LoadingButtonComponent } from './loading-button/loading-button.component';
-import { SpinnerComponent } from './loading-button/spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {HttpClientModule} from '@angular/common/http';
 import {CVSHttpClient} from './cvs-http-client.service';
@@ -19,7 +18,6 @@ import { LoaderOverlayComponent } from './loader-overlay/loader-overlay.componen
     HeroListEnterLeaveComponent,
     HeroListComponent,
     LoadingButtonComponent,
-    SpinnerComponent,
     LoaderOverlayComponent
   ],
   imports: [

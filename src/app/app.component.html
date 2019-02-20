@@ -12,7 +12,7 @@
   <p style="margin-bottom: -2rem">{{pokemon}}</p>
   <app-loading-button
     label="Fetch Data"
-    (onClick)="getPokemonOnEvent()"
+    [overlayLoader]="true"
     [asyncFunction$]="getRandomPokemon()"
     (onSuccess)="onGetPokemonSuccess($event)"
     (onFailure)="onGetPokemonFail($event)"

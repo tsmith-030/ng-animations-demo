@@ -2,18 +2,23 @@
   <button
     #buttonElement
     class="btn-primary"
-    [ngStyle]="{'height.px': (this.buttonHeight ? this.buttonHeight : '10px'), 'width.px': this.buttonWidth}"
-    (click)="getData()"
+    [ngStyle]="{'height.px': this.buttonHeight, 'width.px': this.buttonWidth}"
+    (click)="performAsyncAction()"
   >
     <mat-spinner
-      *ngIf="loading"
+      *ngIf="showButtonLoader"
       diameter=25
       color="accent"
     ></mat-spinner>
     <p
-      *ngIf="!loading">
+      *ngIf="!showButtonLoader">
       {{label}}
     </p>
   </button>
 </div>
 
+<app-loader-overlay
+  *ngIf="showOverlayLoader"
+  [loadingHeader]="loadingHeader"
+  [loadingMessage]="loadingMessage"
+></app-loader-overlay>
