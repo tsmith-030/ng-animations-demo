@@ -8,4 +8,5 @@ import {Component, Input} from '@angular/core';
 export class LoaderOverlayComponent {
   @Input() loadingHeader;
   @Input() loadingMessage;
+  @Input() fullscreen;
 }
