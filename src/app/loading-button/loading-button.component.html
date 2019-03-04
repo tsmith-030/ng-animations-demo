@@ -17,8 +17,8 @@
   </button>
 </div>
 
-<app-loader-overlay
-  *ngIf="showOverlayLoader"
+<app-fullscreen-loader-overlay
+  [isLoading]="showOverlayLoader"
   [loadingHeader]="loadingHeader"
   [loadingMessage]="loadingMessage"
-></app-loader-overlay>
+></app-fullscreen-loader-overlay>

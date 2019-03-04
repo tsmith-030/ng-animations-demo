@@ -1,25 +1,13 @@
 .wrapper {
   width: 100%;
   height: 100%;
-}
-
-.fullscreen-overlay {
-  position: fixed;
-  z-index: 9002;
-  background-color: rgba(255, 255, 255, 0.5);
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .contained-overlay {
-  position: relative;
+  position: absolute;
   z-index: 9002;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   top: 0;
   left: 0;
   width: 100%;

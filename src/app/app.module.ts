@@ -9,7 +9,8 @@ import { LoadingButtonComponent } from './loading-button/loading-button.componen
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {HttpClientModule} from '@angular/common/http';
 import {CVSHttpClient} from './cvs-http-client.service';
-import { LoaderOverlayComponent } from './loader-overlay/loader-overlay.component';
+import { FullscreenLoaderOverlayComponent } from './fullscreen-loader-overlay/fullscreen-loader-overlay.component';
+import { LoaderOverlayContainerComponent } from './loader-overlay-container/loader-overlay-container.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoaderOverlayComponent } from './loader-overlay/loader-overlay.componen
     HeroListEnterLeaveComponent,
     HeroListComponent,
     LoadingButtonComponent,
-    LoaderOverlayComponent
+    FullscreenLoaderOverlayComponent,
+    LoaderOverlayContainerComponent
   ],
   imports: [
     BrowserModule,

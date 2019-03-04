@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div id="spinner-overlay" *ngIf="isLoading" class='fullscreen-overlay'>
+    <div class="spinner-wrapper">
+      <mat-spinner></mat-spinner>
+      <h2 *ngIf="loadingHeader">{{loadingHeader}}</h2>
+      <p *ngIf="loadingMessage">{{loadingMessage}}</p>
+    </div>
+  </div>
+</div>

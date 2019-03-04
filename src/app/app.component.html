@@ -12,12 +12,21 @@
   <p style="margin-bottom: -2rem">{{pokemon}}</p>
   <app-loading-button
     label="Fetch Data"
+    [asyncFunction$]="getRandomPokemon()"
+    (onSuccess)="onGetPokemonSuccess($event)"
+    (onFailure)="onGetPokemonFail($event)"
+  ></app-loading-button>
+  <app-loading-button
+    label="Overlay Spinner"
     [overlayLoader]="true"
     [asyncFunction$]="getRandomPokemon()"
     (onSuccess)="onGetPokemonSuccess($event)"
     (onFailure)="onGetPokemonFail($event)"
   ></app-loading-button>
-  <div style="width: 500px; height: 500px; background-color: bisque">
-    <app-loader-overlay></app-loader-overlay>
-  </div>
+  <mat-spinner></mat-spinner>
+  <app-loader-overlay-container loadingMessage="Loading some content..." [isLoading]="true">
+    <div style="width: 500px; height: 500px; background-color: bisque">
+      <p>Contained Spinner Overlay</p>
+    </div>
+  </app-loader-overlay-container>
 </div>

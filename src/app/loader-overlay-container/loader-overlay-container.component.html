@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div id="spinner-overlay" [ngClass]="fullscreen ? 'fullscreen-overlay' : 'contained-overlay'">
+  <div id="spinner-overlay" *ngIf="isLoading" class='contained-overlay'>
     <div class="spinner-wrapper">
       <mat-spinner></mat-spinner>
       <h2 *ngIf="loadingHeader">{{loadingHeader}}</h2>

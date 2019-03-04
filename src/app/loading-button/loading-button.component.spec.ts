@@ -2,7 +2,7 @@ import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/t
 
 import {LoadingButtonComponent} from './loading-button.component';
 import {MatProgressSpinnerModule} from '@angular/material';
-import {LoaderOverlayComponent} from '../loader-overlay/loader-overlay.component';
+import {FullscreenLoaderOverlayComponent} from '../fullscreen-loader-overlay/fullscreen-loader-overlay.component';
 import {By} from '@angular/platform-browser';
 
 fdescribe('Given LoadingButtonComponent', () => {
@@ -11,7 +11,7 @@ fdescribe('Given LoadingButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoadingButtonComponent, LoaderOverlayComponent],
+      declarations: [LoadingButtonComponent, FullscreenLoaderOverlayComponent],
       imports: [MatProgressSpinnerModule]
     })
       .compileComponents();
@@ -74,10 +74,10 @@ fdescribe('Given LoadingButtonComponent', () => {
       expect(fixture.nativeElement.querySelector('p').innerText).toEqual('Click Me');
     });
     it('Then the loader overlay should be shown', () => {
-      expect(fixture.nativeElement.querySelector('app-loader-overlay')).toBeTruthy();
+      expect(fixture.nativeElement.querySelector('app-fullscreen-loader-overlay')).toBeTruthy();
     });
     it('Then the loader overlay should have a header and message based on what was passed into this component', () => {
-      let overlay = fixture.debugElement.query(By.css('app-loader-overlay'))
+      let overlay = fixture.debugElement.query(By.css('app-fullscreen-loader-overlay'))
       expect(overlay.attributes['ng-reflect-loading-header']).toEqual('Header');
       expect(overlay.attributes['ng-reflect-loading-message']).toEqual('idk, something');
     });
@@ -99,10 +99,10 @@ fdescribe('Given LoadingButtonComponent', () => {
       expect(fixture.nativeElement.querySelector('p').innerText).toEqual('Click Me');
     });
     it('Then the loader overlay should be shown', () => {
-      expect(fixture.nativeElement.querySelector('app-loader-overlay')).toBeTruthy();
+      expect(fixture.nativeElement.querySelector('app-fullscreen-loader-overlay')).toBeTruthy();
     });
     it('Then the loader overlay should have a header and message based on what was passed into this component', () => {
-      let overlay = fixture.debugElement.query(By.css('app-loader-overlay'))
+      let overlay = fixture.debugElement.query(By.css('app-fullscreen-loader-overlay'))
       expect(overlay.attributes['ng-reflect-loading-header']).toEqual('Header');
       expect(overlay.attributes['ng-reflect-loading-message']).toEqual('idk, something');
     });
